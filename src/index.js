@@ -1,17 +1,23 @@
+// Import react and reactDom library
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDom from 'react-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import CommentDetail from './CommentDetail';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import { Button } from 'semantic-ui-react';
+
+
+// Import react component
+const App = () => {
+    return (
+        <div className="ui container comments">
+            <CommentDetail author="Sam" date="Tuesday at 8:00PM" comment="It was awesome"/>
+            <CommentDetail author="Alex" date="Tuesday at 5:00PM" comment="It was amazing experince"/>
+            <CommentDetail author="Jane" date="Tuesday at 12:00PM" comment="I think update needed"/>
+      </div>
+    );
+};
+
+
+// Take the react componenent and show it on screen
+ReactDom.render(<App/>,document.querySelector('#root'))
